@@ -1,0 +1,778 @@
+@font-face {
+  font-family: 'milestone';
+  src: url(./fonts/MilestoneFreeVersion-Script.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'retrolight';
+  src: url(./fonts/Retrolight.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'casino';
+  src: url(./fonts/Casino/Casino.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@keyframes flicker{
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 4px #025d67,
+      0 0 11px #025d67,
+      0 0 19px #025d67,
+      0 0 40px rgba(3, 41, 69, 0.5),
+      0 0 60px rgba(3, 41, 69, 0.5),
+      0 0 70px rgba(3, 41, 69, 0.5),
+      0 0 80px rgba(3, 41, 69, 0.5),
+      0 0 90px rgba(3, 41, 69, 0.5);
+  
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }      
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: true;
+}
+
+/* to make scrolling smooth */
+html{
+  scroll-behavior: smooth;
+}
+/* background color */
+body{
+  background-color: #ffbb99;
+}
+/* Header */
+header{
+  background: url(./img/header-bg.avif);
+  background-size: 1755px 180px;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(100, 176, 243, 0.7); /* Add this line */
+}
+/* Name */
+.name{
+  font-family: 'milestone';
+  font-size: 50px;
+  color:#fff;
+  padding-left: 50px;
+}
+/* Menu */
+.menu{
+  flex-grow: 1;
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
+  padding:5px;
+}
+/* Positin of the tabs */
+.menu ul {   
+  padding: 5px;
+  list-style: none; 
+  display: flex;
+  text-align: center;
+  gap: 1rem;
+}
+/* Tabs */
+.menu ul li { 
+  position: relative; 
+}
+/* to customize the link look */
+.menu ul li a {
+  font-family: 'casino';
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  padding: 15px;
+  position: relative;
+}
+/* Underline of the tabs */
+.menu ul li a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #0b272f;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+  transform: translateX(-50%);
+}
+/* Hover effect of tabs */
+.menu ul li a:hover:after { 
+  width: calc(100% - 30px);
+  left: 50%;
+  background: #fff;
+  transform: translateX(-50%); 
+}
+/* Icons */
+.icons {
+  display: flex; /* Changed from inline to flex */
+  align-items: center;
+  gap: 1rem; /* Space between icons */
+  margin-left: auto; /* This pushes it to the far right */
+  padding-right: 50px;
+}
+/* The size of the icons */
+.icons a img {
+  width: 70px; /* Reduced from 50px for better proportions */
+  height: 70px;
+  transition: transform 0.2s ease; /* Added hover effect */
+}
+/* Hover effect of the icons */
+.icons a:hover img {
+  transform: scale(1.1); /* Subtle hover effect */
+}
+/* Home section */
+#home{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(233, 93, 165, 1.5)
+}
+/* Greeting + title box */
+.intro{
+  flex-grow: 1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding:5px;
+  margin-left: 250px;
+  margin-bottom: 100px;
+}
+/* Greeting */
+.intro h2{
+  color: #b30077;
+  font-family: 'Casino';
+  font-size: 70px;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 0;
+}
+/* title */
+.intro p{
+  color: antiquewhite;
+  margin-top: 5px;
+  font-family: 'Casino';
+  font-size: 30px;
+  font-weight: bold;
+  font-style: normal;
+  animation: flicker 3s infinite alternate;
+}
+/* picture */
+.me{
+  border-radius: 25px;
+  border: #000000 solid 2px;
+  box-shadow: 0 4px 15px rgba(100, 176, 243, 0.9);
+  flex-grow: 1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding:5px;
+  margin-inline-end: 300px;
+}
+/* About section */
+#about{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(233, 93, 165, 1.5)
+}
+/* items layout in this section */
+.about_box{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: 2rem;
+  margin-left: 5rem;
+}
+/* my picture */
+.me2{
+  border: #b30077 solid 2px;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(222, 44, 112, 0.9);
+  padding: 1rem;
+}
+/* the text layout */
+.description{
+  margin-left: 2rem;
+  padding: 3em;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  gap: 15px;
+}
+/* the title of the section */
+.title_about{
+  font-family: 'casino';
+  position:relative; 
+  font-size:50px; 
+  font-weight:700;  
+  letter-spacing:0px; 
+  text-transform:uppercase; 
+  width:150px; 
+  text-align:center; 
+  
+  white-space:nowrap; 
+  border:3px solid #222;
+  padding:5px 11px 3px 11px;
+}
+/* the red dot effect */
+.title_about:before, .title_about:after{
+  background-color: #b30077;
+  position:absolute; 
+  content: '';
+  height: 15px;
+
+  width: 15px; border-radius:50%;
+  bottom: 20px;
+}
+/* position of the left dot */
+.title_about:before{
+  left:-30px;
+}
+/* position of the right dot */
+.title_about:after{
+  right:-30px;
+}
+/* list of informations about me */
+.about_list{
+  list-style-type: circle;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+/* the text styling of the list items */
+#list{
+  font-family: Verdana;
+  font-size: medium;
+  font-weight: 500;
+}
+/* the button to view my resume */
+.cv_link{
+  text-decoration: none;
+  font-family:'Courier New';
+  font-size: medium;
+  align-self: center;
+  color: white;
+}
+/* the styling of the resume button */
+.cv{
+  align-self: center;
+  width: 130px;
+  height: 50px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-flex;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  border: none;
+  background: #025d679b;
+  background: linear-gradient(0deg, #025d67d7 0%, #89ebf6d7 100%);
+}
+/* hover effect of the button */
+.cv:hover {
+  color: #fda275;
+  background: transparent;
+  box-shadow:none;
+}
+.cv:before,
+.cv:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #025d67;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.cv:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.cv:hover:before,
+.cv:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+/* Projects Section */
+#projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(233, 93, 165, 1.5);
+}
+
+.projects_box {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.title_projects {
+    font-family: 'casino';
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #b30077;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.title_projects:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: #025d67;
+    bottom: 0;
+    left: 25%;
+}
+
+.cards-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #ffbb99;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px #113a45c9;
+    width: 80%;
+    max-width: 700px;
+}
+
+.card-img {
+  flex-grow: 1;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    border: 3px solid #fda275;
+    object-fit: cover;
+    box-shadow: 0 0 15px #025d67;
+}
+
+.card-data {
+  flex-shrink: 1;
+    text-align: center;
+    
+}
+
+.card-data h2 {
+    font-family: 'casino';
+    font-size: 28px;
+    color: #b30077;
+    margin-bottom: 1rem;
+}
+
+.card-data p {
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.card-num {
+    font-family: 'casino';
+    font-size: 18px;
+    color: #025d67;
+    margin-bottom: 0.5rem;
+}
+
+/* Navigation dots */
+.navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 187, 153, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-dot:hover {
+    background: #025d67;
+}
+
+/* Card transitions */
+#card1:checked ~ .cards .card:nth-child(1),
+#card2:checked ~ .cards .card:nth-child(2),
+#card3:checked ~ .cards .card:nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 10;
+}
+
+#card1:checked ~ .cards .card:nth-child(3),
+#card2:checked ~ .cards .card:nth-child(1),
+#card3:checked ~ .cards .card:nth-child(2) {
+    opacity: 0.7;
+    transform: translateX(-100%);
+    z-index: 5;
+}
+
+#card1:checked ~ .cards .card:nth-child(2),
+#card2:checked ~ .cards .card:nth-child(3),
+#card3:checked ~ .cards .card:nth-child(1) {
+    opacity: 0.7;
+    transform: translateX(100%);
+    z-index: 5;
+}
+
+/* Active dot indicator */
+#card1:checked ~ .navigation .nav-dot:nth-child(1),
+#card2:checked ~ .navigation .nav-dot:nth-child(2),
+#card3:checked ~ .navigation .nav-dot:nth-child(3) {
+    background: #025d67;
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .card-content {
+        flex-direction: column;
+        padding: 2%;
+        
+    }
+    
+    .card-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .card-data h2 {
+        font-size: 24px;
+    }
+    
+    .card-data p {
+        font-size: 14px;
+    }
+    
+    .navigation {
+        bottom: 10px;
+    }
+}
+
+
+/* Contact Section */
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(233, 93, 165, 1.5);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contact_box {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.title_contact {
+    font-family: 'casino';
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #b30077;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.title_contact:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: #025d67;
+    bottom: 0;
+    left: 25%;
+}
+
+.contact_form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form_group label {
+    font-family: 'casino';
+    font-size: 20px;
+    color: #025d67;
+    letter-spacing: 1px;
+}
+
+.form_group input,
+.form_group textarea {
+    padding: 12px 15px;
+    border: 2px solid #b30077;
+    border-radius: 8px;
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+    outline: none;
+    border-color: #025d67;
+    box-shadow: 0 0 10px rgba(2, 93, 103, 0.5);
+}
+
+.form_group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit_btn {
+    align-self: center;
+    width: 180px;
+    height: 50px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'casino';
+    font-size: 20px;
+    font-weight: 800;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+                7px 7px 20px 0px rgba(0,0,0,.1),
+                4px 4px 5px 0px rgba(0,0,0,.1);
+    border: none;
+    background: #025d679b;
+    background: linear-gradient(0deg, #025d67d7 0%, #89ebf6d7 100%);
+    margin-top: 1rem;
+}
+
+.submit_btn:hover {
+    color: #fda275;
+    background: transparent;
+    box-shadow: none;
+}
+
+.submit_btn:before,
+.submit_btn:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #025d67;
+    box-shadow: -1px -1px 5px 0px #fff,
+                7px 7px 20px 0px #0003,
+                4px 4px 5px 0px #0002;
+    transition: 400ms ease all;
+}
+
+.submit_btn:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.submit_btn:hover:before,
+.submit_btn:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
+
+@media (max-width: 768px) {
+    .title_contact {
+        font-size: 40px;
+    }
+    
+    .contact_form {
+        padding: 0 1rem;
+    }
+    
+    .form_group label {
+        font-size: 18px;
+    }
+    
+    .submit_btn {
+        width: 160px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+
+
+footer {
+  margin-top: 80vh;
+  z-index: 500;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2vw;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    rgba(0, 38, 77, 0),
+    rgba(0, 38, 77, 0.5) 10%,
+    rgba(0, 38, 77, 0.8) 20%,
+    rgba(0, 38, 77, 1) 30%,
+    rgb(0, 38, 77)
+  );
+  z-index: -7;
+}
+
+.footer{
+  color: #fff;
+  margin-top: auto; /* Pushes to bottom */
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #444;
+  font-size: 0.9rem;
+}
+
+.backdrop {
+  z-index: -5;
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  mask-image: linear-gradient(
+    rgba(0, 38, 77, 0),
+    rgba(0, 38, 77, 0.5) 10%,
+    rgba(0, 38, 77, 0.8) 20%,
+    rgba(0, 38, 77, 1) 30%,
+    rgb(0, 38, 77)
+  );
+
+  -webkit-mask-image: linear-gradient(
+    rgba(0, 38, 77, 0),
+    rgba(0, 38, 77, 0.5) 10%,
+    rgba(0, 38, 77, 0.8) 20%,
+    rgba(0, 38, 77, 1) 30%,
+    rgb(0, 38, 77)
+  );
+}

@@ -1,44 +1,48 @@
+/* Milestone Font */
 @font-face {
   font-family: 'milestone';
   src: url(./fonts/MilestoneFreeVersion-Script.otf);
   font-weight: normal;
   font-style: normal;
 }
+/* Retrolight Font */
 @font-face {
   font-family: 'retrolight';
   src: url(./fonts/Retrolight.otf);
   font-weight: normal;
   font-style: normal;
 }
+/* Casino font */
 @font-face {
   font-family: 'casino';
   src: url(./fonts/Casino/Casino.ttf);
   font-weight: normal;
   font-style: normal;
 }
+/* flickering animation */
 @keyframes flicker{
   0%, 18%, 22%, 25%, 53%, 57%, 100% {
-
       text-shadow:
-      0 0 4px #025d67,
-      0 0 11px #025d67,
-      0 0 19px #025d67,
-      0 0 40px rgba(3, 41, 69, 0.5),
-      0 0 60px rgba(3, 41, 69, 0.5),
-      0 0 70px rgba(3, 41, 69, 0.5),
-      0 0 80px rgba(3, 41, 69, 0.5),
-      0 0 90px rgba(3, 41, 69, 0.5);
-  
+      0 0 4px #f8f8f2,
+      0 0 11px #f8f8f2,
+      0 0 19px #f8f8f2,
+      0 0 40px #ef9bda,
+      0 0 80px #ef9bda,
+      0 0 90px #ef9bda;
   }
   
   20%, 24%, 55% {        
       text-shadow: none;
   }      
 }
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: true;
+/* bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* to make scrolling smooth */
@@ -47,14 +51,10 @@ html{
 }
 /* background color */
 body{
-  background-color: #ffbb99;
+  background-color: #1a1a2e;
 }
 /* Header */
 header{
-  background: url(./img/header-bg.avif);
-  background-size: 1755px 180px;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,14 +63,17 @@ header{
   padding-right: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  box-shadow: 0 4px 15px rgba(100, 176, 243, 0.7); /* Add this line */
+  box-shadow: 0 4px 15px rgba(15, 240, 252, 0.7);
+  background: linear-gradient(90deg, rgba(9,9,121,0.2) 0%, rgba(157,0,255,0.2) 50%, rgba(0,212,255,0.2) 100%);
+  border-bottom: 1px solid #0ff0fc;
 }
 /* Name */
 .name{
   font-family: 'milestone';
   font-size: 50px;
-  color:#fff;
+  color: #ff2d75;
   padding-left: 50px;
+  text-shadow: 0 0 5px #f1a7c1, 0 0 10px #f1a7c1, 0 0 20px #f1a7c1;
 }
 /* Menu */
 .menu{
@@ -96,7 +99,7 @@ header{
 .menu ul li a {
   font-family: 'casino';
   font-size: 20px;
-  color: #fff;
+  color: #f8f8f2;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.1em;
@@ -113,7 +116,7 @@ header{
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #0b272f;
+  background: #0ff0fc;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
   transform: translateX(-50%);
@@ -122,26 +125,26 @@ header{
 .menu ul li a:hover:after { 
   width: calc(100% - 30px);
   left: 50%;
-  background: #fff;
+  background: #ff2d75;
   transform: translateX(-50%); 
 }
 /* Icons */
 .icons {
-  display: flex; /* Changed from inline to flex */
+  display: flex;
   align-items: center;
-  gap: 1rem; /* Space between icons */
-  margin-left: auto; /* This pushes it to the far right */
+  gap: 1rem;
+  margin-left: auto;
   padding-right: 50px;
 }
 /* The size of the icons */
 .icons a img {
-  width: 70px; /* Reduced from 50px for better proportions */
+  width: 70px;
   height: 70px;
-  transition: transform 0.2s ease; /* Added hover effect */
+  transition: transform 0.2s ease;
 }
 /* Hover effect of the icons */
 .icons a:hover img {
-  transform: scale(1.1); /* Subtle hover effect */
+  transform: scale(1.1);
 }
 /* Home section */
 #home{
@@ -153,7 +156,10 @@ header{
   padding-top: 3rem;
   padding-bottom: 3rem;
   margin-top: 1rem;
-  box-shadow: 0 4px 15px rgba(233, 93, 165, 1.5)
+  box-shadow: 0 4px 15px rgba(157, 0, 255, 0.8);
+  background: rgba(25, 25, 45, 0.7);
+  border-top: 1px solid #9d00ff;
+  border-bottom: 1px solid #9d00ff;
 }
 /* Greeting + title box */
 .intro{
@@ -168,7 +174,7 @@ header{
 }
 /* Greeting */
 .intro h2{
-  color: #b30077;
+  color: #0ff0fc;
   font-family: 'Casino';
   font-size: 70px;
   font-weight: normal;
@@ -177,7 +183,7 @@ header{
 }
 /* title */
 .intro p{
-  color: antiquewhite;
+  color: #600b60;
   margin-top: 5px;
   font-family: 'Casino';
   font-size: 30px;
@@ -188,8 +194,8 @@ header{
 /* picture */
 .me{
   border-radius: 25px;
-  border: #000000 solid 2px;
-  box-shadow: 0 4px 15px rgba(100, 176, 243, 0.9);
+  border: #ff2d75 solid 2px;
+  box-shadow: 0 0 15px #ff2d75;
   flex-grow: 1;
   justify-content: center;
   display: flex;
@@ -208,7 +214,10 @@ header{
   padding-top: 3rem;
   padding-bottom: 3rem;
   margin-top: 1rem;
-  box-shadow: 0 4px 15px rgba(233, 93, 165, 1.5)
+  box-shadow: 0 4px 15px rgba(157, 0, 255, 0.8);
+  background: rgba(25, 25, 45, 0.7);
+  border-top: 1px solid #9d00ff;
+  border-bottom: 1px solid #9d00ff;
 }
 /* items layout in this section */
 .about_box{
@@ -220,9 +229,9 @@ header{
 }
 /* my picture */
 .me2{
-  border: #b30077 solid 2px;
+  border: #0ff0fc solid 2px;
   border-radius: 25px;
-  box-shadow: 0 4px 15px rgba(222, 44, 112, 0.9);
+  box-shadow: 0 0 15px #0ff0fc;
   padding: 1rem;
 }
 /* the text layout */
@@ -236,6 +245,8 @@ header{
 }
 /* the title of the section */
 .title_about{
+  display: flex;
+  align-self: center;
   font-family: 'casino';
   position:relative; 
   font-size:50px; 
@@ -244,18 +255,20 @@ header{
   text-transform:uppercase; 
   width:150px; 
   text-align:center; 
-  
+  animation: bounce 1.5s infinite;
   white-space:nowrap; 
-  border:3px solid #222;
+  border:3px solid #f8f8f2;
   padding:5px 11px 3px 11px;
+  color: #ff2d75;
+  text-shadow: 0 0 5px #ff2d75;
 }
 /* the red dot effect */
 .title_about:before, .title_about:after{
-  background-color: #b30077;
+  background-color: #0ff0fc;
+  box-shadow: 0 0 5px #0ff0fc;
   position:absolute; 
   content: '';
   height: 15px;
-
   width: 15px; border-radius:50%;
   bottom: 20px;
 }
@@ -279,6 +292,7 @@ header{
   font-family: Verdana;
   font-size: medium;
   font-weight: 500;
+  color: #f8f8f2;
 }
 /* the button to view my resume */
 .cv_link{
@@ -309,11 +323,11 @@ header{
   outline: none;
   border: none;
   background: #025d679b;
-  background: linear-gradient(0deg, #025d67d7 0%, #89ebf6d7 100%);
+  background: linear-gradient(0deg, #025d67d7 0%, #0ff0fcd7 100%);
 }
 /* hover effect of the button */
 .cv:hover {
-  color: #fda275;
+  color: #f8f8f2;
   background: transparent;
   box-shadow:none;
 }
@@ -343,6 +357,7 @@ header{
   width:100%;
   transition:800ms ease all;
 }
+
 /* Projects Section */
 #projects {
     display: flex;
@@ -350,7 +365,10 @@ header{
     align-items: center;
     padding: 2rem 2rem;
     margin-top: 1rem;
-    box-shadow: 0 4px 15px rgba(233, 93, 165, 1.5);
+    box-shadow: 0 4px 15px rgba(157, 0, 255, 0.8);
+    background: rgba(25, 25, 45, 0.7);
+    border-top: 1px solid #9d00ff;
+    border-bottom: 1px solid #9d00ff;
 }
 
 .projects_box {
@@ -361,7 +379,7 @@ header{
     align-items: center;
     gap: 2rem;
 }
-
+/* Section Title */
 .title_projects {
     font-family: 'casino';
     font-size: 50px;
@@ -369,9 +387,11 @@ header{
     letter-spacing: 0px;
     text-transform: uppercase;
     text-align: center;
-    color: #b30077;
+    color: #0ff0fc;
     position: relative;
     padding-bottom: 10px;
+    animation: bounce 1.5s infinite;
+    text-shadow: 0 0 5px #0ff0fc;
 }
 
 .title_projects:after {
@@ -379,173 +399,74 @@ header{
     position: absolute;
     width: 50%;
     height: 3px;
-    background: #025d67;
+    background: #ff2d75;
     bottom: 0;
     left: 25%;
 }
-
-.cards-container {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    height: 400px;
-    margin: 0 auto;
-    overflow: hidden;
+.cards{
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
 }
-
-input[type="radio"] {
-    display: none;
+.project{
+  gap: 3rem;
+  width: 300px; 
+  height: 600px;
+  align-content: center;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  border: #9d00ff 1px solid;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px #9d00ff;
+  text-align: center;
+  background: rgba(31, 31, 56, 0.8);
 }
-
-.cards {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.project:hover{
+  transform: scale(1.1);
 }
-
-.card {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
-    opacity: 0;
-    transform: translateX(100%);
+.img1, .img2, .img3{
+  margin-top: 3rem;
+  width: 200px;
+  height: 150px;
+  border-radius: 25px;
+  object-fit: cover;
+  box-shadow: #222 0px 4px 15px;
 }
-
-.card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 2rem;
-    background: #ffbb99;
-    border-radius: 25px;
-    box-shadow: 0 8px 20px #113a45c9;
-    width: 80%;
-    max-width: 700px;
+#pics{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
+.project h3{
+  font-family: 'casino';
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #0ff0fc;
+  position: relative;
+  margin: 0 0 0.5rem 0;
 
-.card-img {
+}
+.project p{
+  font-family: 'Courier New';
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #f8f8f2;
+  position: relative;
+  padding: 10px;
+  margin: 0;
   flex-grow: 1;
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    border: 3px solid #fda275;
-    object-fit: cover;
-    box-shadow: 0 0 15px #025d67;
-}
-
-.card-data {
-  flex-shrink: 1;
-    text-align: center;
-    
-}
-
-.card-data h2 {
-    font-family: 'casino';
-    font-size: 28px;
-    color: #b30077;
-    margin-bottom: 1rem;
-}
-
-.card-data p {
-    font-family: Verdana, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-}
-
-.card-num {
-    font-family: 'casino';
-    font-size: 18px;
-    color: #025d67;
-    margin-bottom: 0.5rem;
-}
-
-/* Navigation dots */
-.navigation {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 100;
-}
-
-.nav-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 187, 153, 0.7);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.nav-dot:hover {
-    background: #025d67;
-}
-
-/* Card transitions */
-#card1:checked ~ .cards .card:nth-child(1),
-#card2:checked ~ .cards .card:nth-child(2),
-#card3:checked ~ .cards .card:nth-child(3) {
-    opacity: 1;
-    transform: translateX(0);
-    z-index: 10;
-}
-
-#card1:checked ~ .cards .card:nth-child(3),
-#card2:checked ~ .cards .card:nth-child(1),
-#card3:checked ~ .cards .card:nth-child(2) {
-    opacity: 0.7;
-    transform: translateX(-100%);
-    z-index: 5;
-}
-
-#card1:checked ~ .cards .card:nth-child(2),
-#card2:checked ~ .cards .card:nth-child(3),
-#card3:checked ~ .cards .card:nth-child(1) {
-    opacity: 0.7;
-    transform: translateX(100%);
-    z-index: 5;
-}
-
-/* Active dot indicator */
-#card1:checked ~ .navigation .nav-dot:nth-child(1),
-#card2:checked ~ .navigation .nav-dot:nth-child(2),
-#card3:checked ~ .navigation .nav-dot:nth-child(3) {
-    background: #025d67;
-    transform: scale(1.2);
-}
-
-@media (max-width: 768px) {
-    .card-content {
-        flex-direction: column;
-        padding: 2%;
-        
-    }
-    
-    .card-img {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .card-data h2 {
-        font-size: 24px;
-    }
-    
-    .card-data p {
-        font-size: 14px;
-    }
-    
-    .navigation {
-        bottom: 10px;
-    }
 }
 
 
@@ -556,8 +477,10 @@ input[type="radio"] {
     align-items: center;
     padding: 3rem 2rem;
     margin-top: 1rem;
-    box-shadow: 0 4px 15px rgba(233, 93, 165, 1.5);
-    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(157, 0, 255, 0.8);
+    background: rgba(25, 25, 45, 0.7);
+    border-top: 1px solid #9d00ff;
+    border-bottom: 1px solid #9d00ff;
 }
 
 .contact_box {
@@ -568,27 +491,58 @@ input[type="radio"] {
     align-items: center;
     gap: 2rem;
 }
-
+/* Section Title */
+/* Updated Contact Title Design */
 .title_contact {
     font-family: 'casino';
     font-size: 50px;
     font-weight: 700;
-    letter-spacing: 0px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     text-align: center;
-    color: #b30077;
+    color: #ff2d75;
     position: relative;
-    padding-bottom: 10px;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+    animation: bounce 1.5s infinite;
+    text-shadow: 0 0 10px #ff2d75, 0 0 20px #ff2d75;
+    background: rgba(15, 240, 252, 0.1);
+    border: 2px solid #0ff0fc;
+    border-radius: 10px;
+    box-shadow: 
+        0 0 10px #0ff0fc,
+        inset 0 0 10px #0ff0fc;
+    transform: perspective(500px) rotateX(10deg);
+}
+
+.title_contact:before, 
+.title_contact:after {
+    content: '✧';
+    position: absolute;
+    color: #0ff0fc;
+    text-shadow: 0 0 5px #0ff0fc;
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.title_contact:before {
+    left: -40px;
+}
+
+.title_contact:after {
+    right: -40px;
 }
 
 .title_contact:after {
     content: '';
     position: absolute;
-    width: 50%;
+    width: 60%;
     height: 3px;
-    background: #025d67;
-    bottom: 0;
-    left: 25%;
+    background: linear-gradient(90deg, transparent, #0ff0fc, transparent);
+    bottom: -15px;
+    left: 20%;
+    box-shadow: 0 0 5px #0ff0fc;
 }
 
 .contact_form {
@@ -608,26 +562,28 @@ input[type="radio"] {
 .form_group label {
     font-family: 'casino';
     font-size: 20px;
-    color: #025d67;
+    color: #0ff0fc;
     letter-spacing: 1px;
+    text-shadow: 0 0 5px #0ff0fc;
 }
 
 .form_group input,
 .form_group textarea {
     padding: 12px 15px;
-    border: 2px solid #b30077;
+    border: 2px solid #9d00ff;
     border-radius: 8px;
     font-family: Verdana, sans-serif;
     font-size: 16px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(31, 31, 56, 0.8);
+    color: #f8f8f2;
     transition: all 0.3s ease;
 }
 
 .form_group input:focus,
 .form_group textarea:focus {
     outline: none;
-    border-color: #025d67;
-    box-shadow: 0 0 10px rgba(2, 93, 103, 0.5);
+    border-color: #0ff0fc;
+    box-shadow: 0 0 10px #0ff0fc;
 }
 
 .form_group textarea {
@@ -656,13 +612,12 @@ input[type="radio"] {
                 7px 7px 20px 0px rgba(0,0,0,.1),
                 4px 4px 5px 0px rgba(0,0,0,.1);
     border: none;
-    background: #025d679b;
-    background: linear-gradient(0deg, #025d67d7 0%, #89ebf6d7 100%);
+    background: linear-gradient(0deg, #025d67d7 0%, #0ff0fcd7 100%);
     margin-top: 1rem;
 }
 
 .submit_btn:hover {
-    color: #fda275;
+    color: #f8f8f2;
     background: transparent;
     box-shadow: none;
 }
@@ -715,64 +670,24 @@ input[type="radio"] {
     }
 }
 
-
-
 footer {
-  margin-top: 80vh;
   z-index: 500;
-  width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 2vw;
-  position: relative;
-}
-
-footer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(
-    rgba(0, 38, 77, 0),
-    rgba(0, 38, 77, 0.5) 10%,
-    rgba(0, 38, 77, 0.8) 20%,
-    rgba(0, 38, 77, 1) 30%,
-    rgb(0, 38, 77)
-  );
-  z-index: -7;
-}
-
-.footer{
-  color: #fff;
-  margin-top: auto; /* Pushes to bottom */
-  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-top: 1rem;
-  border-top: 1px solid #444;
+  padding-bottom: 1rem;
+  position: relative;  
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(15, 240, 252, 0.7);
+  background: rgba(25, 25, 45, 0.9);
+} 
+
+.footer {
+  color: #f8f8f2;
+  text-align: center;
+  padding: 1rem;
   font-size: 0.9rem;
-}
-
-.backdrop {
-  z-index: -5;
-  position: absolute;
-  inset: 0;
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-  mask-image: linear-gradient(
-    rgba(0, 38, 77, 0),
-    rgba(0, 38, 77, 0.5) 10%,
-    rgba(0, 38, 77, 0.8) 20%,
-    rgba(0, 38, 77, 1) 30%,
-    rgb(0, 38, 77)
-  );
-
-  -webkit-mask-image: linear-gradient(
-    rgba(0, 38, 77, 0),
-    rgba(0, 38, 77, 0.5) 10%,
-    rgba(0, 38, 77, 0.8) 20%,
-    rgba(0, 38, 77, 1) 30%,
-    rgb(0, 38, 77)
-  );
 }

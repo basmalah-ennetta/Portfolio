@@ -691,3 +691,182 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
 }
+
+/* Add these media queries at the end of your existing CSS */
+
+/* For tablets and smaller desktops */
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .name {
+    padding-left: 0;
+    font-size: 40px;
+  }
+  
+  .menu ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .icons {
+    padding-right: 0;
+  }
+  
+  #home {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .intro {
+    margin-left: 0;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+  
+  .me {
+    margin-inline-end: 0;
+    max-width: 80%;
+  }
+  
+  .about_box {
+    flex-direction: column;
+    margin-left: 0;
+    padding: 1rem;
+  }
+  
+  .me2 {
+    margin-bottom: 2rem;
+    max-width: 80%;
+  }
+  
+  .description {
+    margin-left: 0;
+    padding: 1em;
+  }
+  
+  .cards {
+    gap: 2rem;
+  }
+  
+  .project {
+    width: 280px;
+    height: auto;
+    padding: 1rem;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .name {
+    font-size: 32px;
+  }
+  
+  .menu ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .menu ul li a {
+    padding: 10px;
+    font-size: 18px;
+  }
+  
+  .icons a img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .intro h2 {
+    font-size: 40px;
+  }
+  
+  .intro p {
+    font-size: 24px;
+  }
+  
+  .title_about,
+  .title_projects,
+  .title_contact {
+    font-size: 36px;
+  }
+  
+  .title_about:before,
+  .title_about:after {
+    height: 10px;
+    width: 10px;
+    bottom: 15px;
+  }
+  
+  .title_about:before {
+    left: -20px;
+  }
+  
+  .title_about:after {
+    right: -20px;
+  }
+  
+  .about_list {
+    gap: 20px;
+  }
+  
+  #list {
+    font-size: 16px;
+  }
+  
+  .contact_form {
+    padding: 0 1rem;
+  }
+  
+  .form_group label {
+    font-size: 18px;
+  }
+  
+  .submit_btn {
+    width: 160px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+  .name {
+    font-size: 28px;
+  }
+  
+  .intro h2 {
+    font-size: 32px;
+  }
+  
+  .intro p {
+    font-size: 20px;
+  }
+  
+  .title_about,
+  .title_projects,
+  .title_contact {
+    font-size: 28px;
+  }
+  
+  .project {
+    width: 100%;
+  }
+  
+  .img1, .img2, .img3 {
+    width: 150px;
+    height: 120px;
+  }
+  
+  .project h3 {
+    font-size: 24px;
+  }
+  
+  .project p {
+    font-size: 16px;
+  }
+}
